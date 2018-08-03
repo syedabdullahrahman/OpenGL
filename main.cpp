@@ -7,12 +7,18 @@
 
 #include<stdio.h>
 
+float counter = 0.0;
+
 void display()  //every time it is called
 {
     glClear(GL_COLOR_BUFFER_BIT); //first call & second call er moddhe ja korbo
 
+
+    // 1st triangle
+    glLoadIdentity(); // more control over rotation
     //degree , x , y , z
-    glRotatef(1,0.0,1.0,0.0);
+    glRotatef(counter,0.0,1.0,0.0);
+    counter+= 1.1;
 
     glBegin(GL_TRIANGLES);
         glColor3f(1.0,0.0,0.0); // ekbar set korsilam dekhe ek color ee // ekhon ekbar color set korbo r ekbo , set korbo and akbo
@@ -26,6 +32,31 @@ void display()  //every time it is called
 
 
     glEnd();
+
+
+
+
+    // 2nd triangle
+
+    glLoadIdentity(); // more control over rotation
+    //degree , x , y , z
+    glRotatef(75,0.0,1.0,0.0);
+
+    glBegin(GL_TRIANGLES);
+    //R G B
+    //x y z
+
+        glColor3f(1.0,0.0,0.0); // ekbar set korsilam dekhe ek color ee // ekhon ekbar color set korbo r ekbo , set korbo and akbo
+        glVertex3f(-0.9,-0.1,0.0);
+        glColor3f(0.0,0.0,1.0);
+        glVertex3f(0.1,-0.1,0.0);
+        glColor3f(0.0,1.0,0.0);
+        glVertex3f(-0.5,0.9,0.0);
+
+
+    glEnd();
+
+
 
 
 
