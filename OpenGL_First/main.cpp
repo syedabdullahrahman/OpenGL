@@ -16,11 +16,14 @@ void display()  //every time it is called
 
 
     // 1st triangle
-    glLoadIdentity(); // more control over rotation
+    glLoadIdentity(); // more control over rotation //reset every thing
     //degree , x , y , z
-    glTranslatef(counter/150,0.0,0.0);
+
+    glTranslatef(counter/150,0.0,-4.0);
     glRotatef(counter,0.0,1.0,0.0);
-    counter+= 0.5;
+
+
+    counter+= 1.0;
 
     if(counter >200) counter =-200 ;
 
@@ -43,8 +46,11 @@ void display()  //every time it is called
     // 2nd triangle
 
     glLoadIdentity();
-    glTranslatef(0.0,-0.5,0.0);
-    glRotatef(5,0.0,1.0,0.0);
+
+    glTranslatef(0.0,-0.5,-4.0);
+glRotatef(5,0.0,1.0,0.0);
+
+
 
     glBegin(GL_TRIANGLES);
     //R G B
@@ -53,7 +59,7 @@ void display()  //every time it is called
         glColor3f(1.0,0.0,0.0); // ekbar set korsilam dekhe ek color ee // ekhon ekbar color set korbo r ekbo , set korbo and akbo
         glVertex3f(-0.9,-0.1,0.0);
         glColor3f(0.0,0.0,1.0);
-        glVertex3f(0.1,-0.1,-0.9 );
+        glVertex3f(0.1,-0.1,0.0 );
         glColor3f(0.0,1.0,0.0);
         glVertex3f(-0.5,0.9,0.0);
 
@@ -73,6 +79,13 @@ void display()  //every time it is called
 void reshape(int w, int h)
 {
     glViewport(0,0,w,h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    //view angle , aspect ration , how close , how far // units
+    gluPerspective(60,(float)w/(float)h,1.0,10.0);
+    glMatrixMode(GL_MODELVIEW);
+
+
 }
 
 void initOpenGL()

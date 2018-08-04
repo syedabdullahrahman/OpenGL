@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1533331446 source:c:\users\user\documents\my codes\temp\main.cpp
+1446667744 source:c:\users\user\documents\my codes\first\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
-	<stdio.h>
+	<stdlib.h>
 
 1426328128 h:\codeblocks\mingw\include\gl\glut.h
 	"freeglut_std.h"
@@ -227,19 +227,4 @@
 1301111164 h:\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
-
-1341006776 h:\codeblocks\mingw\include\stdio.h
-	<_mingw.h>
-	<stddef.h>
-	<stdarg.h>
-	<sys/types.h>
-
-1341006780 h:\codeblocks\mingw\include\sys\types.h
-	<_mingw.h>
-	<stddef.h>
-
-1533372117 source:c:\users\user\documents\my codes\temp\opengl_first\main.cpp
-	<GLUT/glut.h>
-	<GL/glut.h>
-	<stdio.h>
 
