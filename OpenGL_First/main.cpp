@@ -11,14 +11,18 @@ float counter = 0.0;
 
 void display()  //every time it is called
 {
-    glClear(GL_COLOR_BUFFER_BIT); //first call & second call er moddhe ja korbo
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ); //first call & second call er moddhe ja korbo
+
 
 
     // 1st triangle
     glLoadIdentity(); // more control over rotation
     //degree , x , y , z
+    glTranslatef(counter/150,0.0,0.0);
     glRotatef(counter,0.0,1.0,0.0);
-    counter+= 1.1;
+    counter+= 0.5;
+
+    if(counter >200) counter =-200 ;
 
     glBegin(GL_TRIANGLES);
         glColor3f(1.0,0.0,0.0); // ekbar set korsilam dekhe ek color ee // ekhon ekbar color set korbo r ekbo , set korbo and akbo
@@ -38,9 +42,9 @@ void display()  //every time it is called
 
     // 2nd triangle
 
-    glLoadIdentity(); // more control over rotation
-    //degree , x , y , z
-    glRotatef(75,0.0,1.0,0.0);
+    glLoadIdentity();
+    glTranslatef(0.0,-0.5,0.0);
+    glRotatef(5,0.0,1.0,0.0);
 
     glBegin(GL_TRIANGLES);
     //R G B
@@ -49,7 +53,7 @@ void display()  //every time it is called
         glColor3f(1.0,0.0,0.0); // ekbar set korsilam dekhe ek color ee // ekhon ekbar color set korbo r ekbo , set korbo and akbo
         glVertex3f(-0.9,-0.1,0.0);
         glColor3f(0.0,0.0,1.0);
-        glVertex3f(0.1,-0.1,0.0);
+        glVertex3f(0.1,-0.1,-0.9 );
         glColor3f(0.0,1.0,0.0);
         glVertex3f(-0.5,0.9,0.0);
 
@@ -76,6 +80,9 @@ void initOpenGL()
 
     //RGBA
     glClearColor(0.0,0.0,0.0,1.0); //set color , not use this
+
+    glEnable(GL_DEPTH_TEST); //enable depth
+    glDepthFunc(GL_LEQUAL); //cmp depth
 
 
 }
