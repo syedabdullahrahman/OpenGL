@@ -48,7 +48,7 @@ void display()  //every time it is called
     glLoadIdentity();
 
     glTranslatef(0.0,-0.5,-4.0);
-glRotatef(5,0.0,1.0,0.0);
+    glRotatef(5,0.0,1.0,0.0);
 
 
 
